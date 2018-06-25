@@ -1,0 +1,6 @@
+<!--pages/movies/more/more.wxml-->
+<import src="../moviegride-template/moviegride-template.wxml"/>
+
+<view class="more-box">
+	<template is="moviegride-template" data="{{ movies }}"></template>
+</view>

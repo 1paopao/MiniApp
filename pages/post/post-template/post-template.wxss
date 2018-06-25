@@ -1,0 +1,61 @@
+.post-content {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+	background-color: #fff;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.post-user {
+	padding: 10rpx 20rpx;
+}
+.post-user image {
+	width: 80rpx;
+	height: 80rpx;
+	vertical-align: middle;
+	margin-right: 30rpx;
+}
+.post-user text {
+	font-size: 26rpx;
+	vertical-align: middle;
+}
+.post-title {
+	color: #333;
+	padding-left: 30rpx;
+	font-size: 30rpx;
+	font-weight: 600;
+	margin-bottom: 20rpx;
+}
+.post-pic {
+	width: 100%;
+	height: 340rpx;
+	margin: auto 0;
+}
+.post-detail {
+	padding: 0 10px;
+	font-size: 28rpx;
+	color: #666;
+	letter-spacing: 1px;
+	/* 解决换行时出现的空白问题 */
+	text-align: justify;
+	padding-top:10px;
+}
+.post-like {
+	/* 使用flex-direction来解决文字和图片不中心垂直的问题 */
+	flex-direction: row;
+	padding-left: 30rpx;
+	padding-bottom: 20rpx;
+}
+.post-like-image {
+	width: 30rpx;
+	height: 30rpx;
+	vertical-align: middle;
+	margin-right: 10rpx;
+}
+.post-like-num {
+	font-size: 10px;
+	vertical-align: middle;
+	margin-right: 30rpx;
+}

@@ -1,0 +1,8 @@
+<view class="container">
+	<image src="/images/pic01.jpg" class="user-avator"></image>
+	<text class='user-name'>hello,paopao</text>
+	<view class='moto-container' catchtap="enterMain">
+		<!-- 使用catch 可以防止事件冒泡 -->
+		<text class='moto' bindtap="showtItle">开启小程序之旅</text>
+	</view>
+</view>

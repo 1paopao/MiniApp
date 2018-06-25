@@ -1,0 +1,11 @@
+<!-- 声明需要使用的模板 -->
+<import src="../stars-template/stars-template.wxml"/>
+
+<template name="movie-template">
+	<view class="movie-container" data-movieId="{{ movieId }}" bindtap="toMoviesDetail">
+			<image class="movie-pic" src="{{ coverImg }}"></image>
+			<text class="movie-name">{{ title }}</text>
+		<!-- 使用stars模板 -->
+			<template is="stars-template" data="{{ stars:stars, average:average }}"></template>
+	</view>
+</template>

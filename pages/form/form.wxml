@@ -1,0 +1,61 @@
+<!--pages/form/form.wxml-->
+<view class="form-container">
+	<view class="form-title">
+		<text class="title">表单组件</text>
+		<view class="line"></view>
+	</view>
+	
+	<!-- form表单 -->
+	<form bindsubmit="formSubmit" bindreset="formReset">
+		<!-- switch -->
+	  <view class="section section_gap">
+	    <view class="section__title">switch</view>
+	    <switch name="switch" checked="222" bindchange="switch1Change" color="red"/>
+	  </view>
+
+	  <!-- slider -->
+	  <view class="section section_gap">
+	    <view class="section__title">slider</view>
+	    <slider name="slider" min="10" max="500" step="5" value="15"  block-color="pink" bindchange="sliderChange" show-value bindchanging="sliderChanging"></slider>
+	  </view>
+
+	  <!-- input -->
+	  <view class="section">
+	    <view class="section__title">input</view>
+	    <input name="input" 
+	    	placeholder="please input here" 
+	    	placeholder-style="color:#eee"
+	    	maxlength="10" 
+	    	confirm-type="done"
+	    	confirm-hold="true"
+	    	focus/>
+	    	<input  bindinput="bindReplaceInput" placeholder="连续的两个1会变成2" style="margin-top: 20rpx"/>
+	  </view>
+
+	  <!-- radio -->
+	  <view class="section section_gap">
+	    <view class="section__title">radio</view>
+	    <radio-group name="radio-group" bindchange="radioChange">
+	      <label><radio value="woman" checked="true"/>woman</label>
+	      <label><radio value="man"/>man</label>
+	    </radio-group>
+	  </view>
+
+	  <!-- checkbox -->
+	  <view class="section section_gap">
+	    <view class="section__title">checkbox</view>
+	    <checkbox-group name="checkbox" bindchange="checkboxChange">
+	      <label wx:for="{{ items }}" wx:key="unique"><checkbox value="{{ item.name }}" checked="{{ item.checked }}"/>{{ item.value }}</label>
+	      <!-- <label><checkbox value="牛肉"/>牛肉</label>
+	      <label><checkbox value="鸡肉"/>鸡肉</label>
+	      <label><checkbox value="羊肉"/>羊肉</label> -->
+	    </checkbox-group>
+	  </view>
+	  <!-- 表单提交 -->
+	  <view class="btn-area">
+	    <button formType="submit">Submit</button>
+	    <button formType="reset">Reset</button>
+	  </view>
+	</form>
+
+</view>

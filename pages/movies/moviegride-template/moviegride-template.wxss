@@ -1,0 +1,14 @@
+/* 引入movie模板的样式； */
+@import "../movie-template/movie-template.wxss";
+
+/* flex布局不支持scroll-view */
+.movietemplate-box {
+	float: left;
+	margin-bottom: 40rpx;
+}
+
+.moviegride-box {
+	height: 1300rpx;
+	margin-top: 40rpx;
+	margin-left:14rpx;
+}

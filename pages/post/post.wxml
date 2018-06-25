@@ -1,0 +1,35 @@
+<!-- 1.引入template路径 -->
+<import src="post-template/post-template.wxml" />
+
+<view class="post-container">
+	<!-- swipe 注意：必须带上autoplay属性，否则手动滑动出现不会滑动的现象 -->
+	<swiper catchtap="goSwipeDeatil" vertical="{{ false }}" autoplay="true" interval="3000" circular="true" indicator-dots="true" indicator-active-color="#fff">
+	    <swiper-item>
+	        <image src="/images/wx.png" data-pageId="3"></image>
+	    </swiper-item>
+	    <swiper-item>
+	        <image src="/images/vr.png" data-pageId="4"></image>
+	    </swiper-item>
+	    <swiper-item>
+	        <image src="/images/iqiyi.png" data-pageId="5"></image>
+	    </swiper-item>
+	</swiper>
+
+	<!-- article  -->
+	<!-- 利用block来渲染一个包含多节点的结构块  
+			 index,item  是默认的~~
+			 可以通过wx:for-item="item1" wx:for-index="idx"设置想要元素的变量名、下标的变量名;
+
+			 使用wx:key="*this" 可以为每一块添加一个标识
+	-->
+	<block wx:for="{{ contentLists }}" wx:key="*this">
+		<!-- 2.使用name为"post-template"的模板 ，将需要传入的数据放在data里面；
+				注意： 1）template是有作用域的，只能使用data传入的数据 ；
+							2）如果需要js文件里面的变量，则需要添加在data属性上
+		-->
+		<view catchtap="goDetail" data-pageId="{{ item.postId }}">
+			<template is="post-template" data="{{ ...item, condation }}"/>
+		</view>
+	</block>
+
+</view>

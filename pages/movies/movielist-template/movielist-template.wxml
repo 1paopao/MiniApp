@@ -1,0 +1,29 @@
+<import src="../movie-template/movie-template.wxml"/>
+
+<template name="movielist-template">
+	<view class="movielist-container">
+		<!-- 最外层在包裹一个view,解决箭头出外的问题 -->
+		<view class="inner-header">
+			<view class="movielist-header">
+				<text class="movielist-hot">{{ moviesTitle }}</text>
+				<!-- 点击的时候，将传入的title通过属性传入到跳转的链接地址里 -->
+				<view class="movielist-more" catchtap="showmore" data-title="{{ moviesTitle }}">
+					<text class="more-text">更多</text>
+					<image class="more-pic" src="/images/icon/arrow-right.png"></image>
+				</view>
+			</view>
+		</view>
+		<!-- 使用movie模板 -->
+		<view class="movie-template">
+			<block wx:for="{{ movies }}" wx:key="unique">
+				<template is="movie-template" data="{{ ...item }}"></template>
+			</block>
+			<!-- <block wx:for="{{ coming }}" wx:key="*this">
+				<template is="movie-template" data="{{ ...item }}"></template>
+			</block>
+			<block wx:for="{{ top250 }}" wx:key="*this">
+				<template is="movie-template" data="{{ ...item }}"></template>
+			</block> -->
+		</view>
+	</view>
+</template>

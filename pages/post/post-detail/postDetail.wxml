@@ -1,0 +1,28 @@
+<view class="detail-container" wx:if="{{ dataCont }}">
+	<image src="{{ isPlay ? dataCont.music.coverImg : dataCont.headImgSrc }}" class="header-image"></image>
+
+	<!-- 1.通过属性绑定控制图片显示  2.也可以通过wx:if  wx:else-->
+	<image src="{{ isPlay ? '/images/music/music-stop.png' : '/images/music/music-start.png' }}" class="audio" bindtap="palyMusic"></image>
+
+	<view class="author-date">
+		<image src="{{ dataCont.avatar }}" class="avatar"></image>
+		<text class="author">{{ dataCont.author }}</text>
+		<text class="simlar uthor-text">发布于</text>
+		<text class="simlar date">{{ dataCont.date }}</text>
+	</view>
+
+	<text class="title">{{ dataCont.title }}</text>
+
+	<view class="collection-share">
+		<view class="right-link">
+			<!-- 通过collection，控制是否收藏 -->
+			<image wx:if="{{ collection }}" src="../../../images/icon/collection.png" class="collection-image" catchtap="collect"></image>
+			<image wx:else src="../../../images/icon/collection-anti.png" class="collection-image" catchtap="collect"></image>
+
+			<image src="../../../images/icon/share.png" catchtap="share"></image>
+		</view>
+		<view class="line"></view>
+	</view>
+
+	<text class="detail">{{ dataCont.detail }}</text>
+</view>

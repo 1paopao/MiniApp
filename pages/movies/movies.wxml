@@ -1,0 +1,42 @@
+<!-- movies 页面 -->
+<import src="movielist-template/movielist-template.wxml"/>
+<import src="moviegride-template/moviegride-template.wxml"/>
+
+<!-- 搜索框 -->
+<view class="search">
+	<icon class="search-icon" type="search" size="14" color="#405f78"></icon>
+	<!-- 通过value进行绑定值，进行清空输入框文字 -->
+	<input class="search-input"
+				 value="{{ text }}"
+				 type="text" 
+				 placeholder="最近上映的电影" 
+				 placeholder-style="placeholder-style"
+				 bindfocus="onBindFocus"
+				 bindconfirm="onBindFirm"/>
+	<icon class="clear-icon" 
+				type="clear" 
+				size="16" 
+				color="#405f78"
+				bindtap="clear"
+				wx:if="{{ gridePanel }}"></icon>
+</view>
+
+<!-- 电影列表 -->
+<view class="container" wx:if="{{ moviesPanel }}">
+	<block>
+		<view class="list-template">
+			<template is="movielist-template" data="{{ ...theaters }}"></template>
+		</view>
+	</block>
+	<view class="list-templat">
+		<template is="movielist-template" data="{{ ...coming }}"></template>
+	</view>
+	<view class="list-templat">
+		<template is="movielist-template" data="{{ ...top250 }}"></template>
+	</view>
+</view>
+
+<!-- 输入框获取焦点，隐藏movies主页面，显示moviesgride列表 -->
+<view class="gride-panel" wx:if="{{ gridePanel }}">
+	<template is="moviegride-template" data="{{ ...searchList }}"></template>
+</view>

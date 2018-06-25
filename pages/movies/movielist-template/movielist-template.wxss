@@ -1,0 +1,43 @@
+@import "../movie-template/movie-template.wxss";
+
+.movielist-container {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	margin-bottom: 30rpx;
+}
+
+.inner-header {
+	/*滚动的时候设置padding*/
+	 padding-right:24rpx;
+}
+
+.movielist-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	padding: 30rpx 20rpx 22rpx;
+}
+
+.movielist-more {
+	margin-top: -10rpx;
+}
+
+.movielist-more text {
+   margin-right: 10rpx; 
+  color: #1f4ba5;
+}
+
+.movielist-more image {
+	width: 9rpx;
+	height: 16rpx;
+	vertical-align: middle;
+}
+
+.movie-template {
+	display: flex;
+	flex-direction: row;
+	/*  可以滑动 */
+	/*white-space: nowrap;*/
+	/*overflow-x: auto;*/
+}

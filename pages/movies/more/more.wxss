@@ -1,0 +1,3 @@
+/* pages/movies/more/more.wxss */
+/* 引入movie模板的样式； */
+@import "../moviegride-template/moviegride-template.wxss";

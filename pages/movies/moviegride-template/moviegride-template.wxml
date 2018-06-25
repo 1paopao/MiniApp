@@ -1,0 +1,12 @@
+<import src="../movie-template/movie-template.wxml"/>
+
+<!-- scroll-view：可滚动视图区域 必须要加高度-->
+<template name="moviegride-template">
+	<view class="moviegride-box">
+		<block wx:for="{{ movies }}" wx:key="unique">
+			<view class="movietemplate-box">
+				<template is="movie-template" data="{{ ...item }}"></template>
+			</view>
+		</block>
+	</view>
+</template>

@@ -1,0 +1,21 @@
+<!-- 使用template实现模板化技术
+		 好处：可以多个页面使用同个模板，实现可复用
+ -->
+ <template name="post-template">
+ 	<view class="post-content">
+ 		<view class="post-user">
+ 			<image src="{{ avatar }}"></image>
+ 			<text>{{ date }}</text>
+ 		</view>
+ 		<text class="post-title">{{ condation ? title : "测试三目运算" }}</text>
+ 		<!-- wx:if如果是false，一定要带{{}}，否则会被解析为字符串，然后转为Boolean，又为true -->
+ 		<image wx:if="{{ condation }}" src="{{ imgSrc }}" class="post-pic"></image>
+ 		<text class="post-detail">{{ content }}</text>
+ 		<view class="post-like">
+ 			<image src="/images/icon/chat.png" class="post-like-image"></image>
+ 			<text class="post-like-num">{{ reading }}</text>
+ 			<image src="/images/icon/view.png" class="post-like-image"></image>
+ 			<text class="post-like-num">{{ collection }}</text>
+ 		</view>
+ 	</view>
+ </template>
